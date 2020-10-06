@@ -6,7 +6,8 @@ def webServer(port=13331):
     serverSocket = socket(AF_INET, SOCK_STREAM)
 
     #Prepare a sever socket
-    host = gethostname()            # finding the host name
+    #host = gethostname()            # finding the host name
+    host = getfqdn()
     serverSocket.bind((host, port)) # Binding host and port
     print(host,port)
     serverSocket.listen(1)          # max 1 connection
